@@ -1,3 +1,3 @@
 <html>
-index.tpl
+宝酒造
 </html>
