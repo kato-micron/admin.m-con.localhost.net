@@ -1,0 +1,20 @@
+#Mac
+.DS_Store
+#python
+__pycache__
+#
+log
+*.swp
+# DB
+/docker/mysql/data/
+# logs
+/log/
+# Secure
+/docker/web/ssl/
+.env
+.backup.env
+# Resources
+/csv/
+
+# .claude
+.claude/settings.local.json

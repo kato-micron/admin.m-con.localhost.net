@@ -1,0 +1,8 @@
+# Admin panel local ignores
+.env
+vendor/
+templates_c/
+composer.phar
+node_modules/
+.DS_Store
+

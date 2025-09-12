@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  admin-app:
+    build:
+      context: .
+      dockerfile: docker/admin/Dockerfile
+    container_name: admin-app
+    restart: unless-stopped
+    ports:
+      - "8088:80"
+    volumes:
+      - ./admin:/var/www/admin
+    # No DB wiring yet; keep it minimal for Phase 1
+
+networks:
+  default:
+    driver: bridge
+
