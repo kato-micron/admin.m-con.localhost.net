@@ -1,3 +1,0 @@
-<?php
-
-$RP->disp($module);

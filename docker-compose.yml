@@ -7,13 +7,16 @@ services:
       dockerfile: docker/admin/Dockerfile
     container_name: admin-app
     restart: unless-stopped
+    env_file:
+      - .env
     ports:
       - "8088:80"
     volumes:
       - ./admin:/var/www/admin
-    # No DB wiring yet; keep it minimal for Phase 1
+    networks:
+      - local-net   # 本家MySQLがいるネットワーク
 
 networks:
-  default:
-    driver: bridge
-
+  local-net:
+    external: true
+    name: m-conlocalhostnet_local-net

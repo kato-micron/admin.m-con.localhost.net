@@ -1,0 +1,78 @@
+version: "3.3"
+
+services:
+  # MySQL
+  db:
+    container_name: "db"
+    build: ./docker/mysql
+    restart: always # コンテナが落ちたら再起動
+    tty: true
+    env_file:
+      - .env
+    expose:
+      - 3306
+    volumes:
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d # MySQL設定
+      - ./log/mysql:/var/log/mysql # ログ
+      - ./docker/mysql/data:/var/lib/mysql # データ永続化
+    networks:
+      - local-net
+
+  # FastAPI
+  api:
+    # db起動後に立ち上げる
+    depends_on:
+      - db
+    container_name: "api"
+    build: ./docker/api
+    env_file:
+      - .env
+    expose:
+      - 8000
+    volumes:
+      - ./src:/usr/src/server
+      - ./csv:/usr/src/server/csv
+    command: ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0"]
+    networks:
+      - local-net
+      - nginx_network
+
+  # Web
+  web:
+    container_name: "web"
+    image: nginx:alpine
+    depends_on:
+      - api
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./docker/web/conf.d:/etc/nginx/conf.d
+      - ./docker/web/ssl/certificates:/etc/nginx/ssl/certificates
+      - ./log/nginx:/var/log/nginx
+      - ./docker/web/www:/etc/nginx/www
+    networks:
+      - nginx_network
+
+  # phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - UPLOAD_LIMIT=100M    # アップロードサイズを100MBに設定
+      - MAX_EXECUTION_TIME=600    # 実行時間制限を600秒に設定
+      - MEMORY_LIMIT=512M    # メモリ制限を512MBに設定
+    ports:
+      - "8001:80"
+    depends_on:
+      - db
+    networks:
+      - local-net
+
+# ネットワークブリッジ
+networks:
+  local-net:
+    driver: bridge
+  nginx_network:
+    driver: bridge

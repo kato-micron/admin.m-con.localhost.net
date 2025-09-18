@@ -1,0 +1,505 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    font-size : 9pt;
+}
+
+
+
+body {
+    width: 100%;
+}
+
+
+
+#wrap {
+    width: 100%;
+    height:100%;
+    margin  : 0 auto;
+}
+
+
+
+#navi {
+    width       : auto;
+    /*padding     : 20px;*/
+}
+
+#navi h1 {
+    padding         : 10px;
+    background      : #DCE9EF;
+    color           : #97CCF7;
+    font-size       : 11pt;
+    border-bottom   : 1px solid #97CCF7;
+}
+
+#navi h2 {
+    padding     : 10px 0px 0px 0px;
+    color       : #076593;
+    background  : #88BBBB;
+    font-weight : bold;
+}
+
+#navi ul {
+    display    : inline;
+    list-style : none;
+}
+
+
+
+#navi li {
+    display    : inline;
+    list-style : none;
+}
+
+
+
+#navi a:link {
+    color           : #076593;
+    text-decoration : none;
+    padding         : 5px 5px 0px 0px;
+    border-bottom   : 1px solid #DCE9EF;
+}
+#navi a:visited {
+    color           : #076593;
+    text-decoration : none;
+    padding         : 5px 5px 0px 0px;
+    border-bottom   : 1px solid #DCE9EF;
+}
+#navi a:hover {
+    background      : #FFFFFF;
+    color           : #6666CC;
+    text-decoration : none;
+    padding         : 5px 5px 0px 0px;
+    border-bottom   : 1px solid #076593;
+}
+#navi a:active {
+    background      : #FFFFFF;
+    color           : #6666CC;
+    text-decoration : none;
+    padding         : 5px 5px 0px 0px;
+    border-bottom   : 1px solid #076593;
+}
+
+
+
+#menu {
+    width           : 150px;
+    white-space     : nowrap;
+    background      : #EEEEEE;
+    float           : left;
+    border-right    : 1px solid #97CCF7;
+    display         : block;
+}
+
+
+#menu ul {
+    list-style : none;
+    padding    : 1px;
+}
+
+
+
+#menu li {
+    list-style : none;
+    padding    : 1px;
+}
+
+
+
+
+
+#menu a:link {
+    color           : #076593;
+    text-decoration : none;
+    padding         : 5px 5px 5px 5px;
+    border-bottom   : 1px solid #DCE9EF;
+    display         : block;
+}
+#menu a:visited {
+    color           : #076593;
+    text-decoration : none;
+    padding         : 5px 5px 5px 5px;
+    border-bottom   : 1px solid #DCE9EF;
+    display         : block;
+}
+#menu a:hover {
+    background      : #6666CC;
+    color           : #88BBBB;
+    text-decoration : none;
+    padding         : 5px 5px 5px 5px;
+    border-bottom   : 1px solid #076593;
+    display         : block;
+}
+#menu a:active {
+    background      : #FFFFFF;
+    color           : #6666CC;
+    text-decoration : none;
+    padding         : 5px 5px 5px 5px;
+    border-bottom   : 1px solid #076593;
+    display         : block;
+}
+
+#menu h2 {
+    color           : #88BBBB;
+    background      : #076593;
+    text-decoration : none;
+    padding         : 5px 5px 5px 5px;
+    border-bottom   : 1px solid #DCE9EF;
+    font-weight     : bold;
+}
+
+
+
+#msgs {
+    min-width:500px; 
+    padding-top : 10px;
+    padding-left: 20px;
+    display     : block;
+    /*
+    border-bottom   : 1px dashed #97CCF7;
+    */
+}
+
+h3 {
+    font-size       : 1.5em;
+    padding         : 10px;
+    margin          : 10px 0; 
+    /*
+    border-bottom   : 1px dashed #97CCF7;
+    */
+}
+
+
+
+#comment {
+    font-size: 1.3em;
+    color: #CC3333;
+    font-weight:bold;
+}
+
+
+
+#contents {
+    /*
+    white-space  : nowrap;
+    */
+    min-width   : 80%;
+    margin-top  : 10px;
+    margin-right : 10px;
+    margin-bottom  : 10px;
+    margin-left : 10px;
+    padding-top : 5px;
+    background  : #FFFFFF;
+    float       : left;
+    /*
+    border-right : 1px solid #97CCF7;
+    */
+    border-top  : dashed 1px #97CCF7;
+}
+
+#contents p {
+    padding         : 20px;
+}
+
+
+
+
+
+
+
+table {
+    border-top      : 1px solid #88BBBB;
+    border-left     : 1px solid #88BBBB;
+    border-right    : 1px solid #076593;
+    border-bottom   : 1px solid #076593;
+    border-collapse: separate;
+
+    /*
+    width           : 70%;
+    */
+}
+
+tr th{
+    background      : #97CCF7;
+    font-weight     : bold;
+    text-align      : center;
+    border-top      : 1px solid #88BBBB;
+    border-left     : 1px solid #88BBBB;
+    border-right    : 1px solid #076593;
+    border-bottom   : 1px solid #076593;
+    padding         : 5px;
+}
+
+tr td{
+    border-top      : 1px solid #88BBBB;
+    border-left     : 1px solid #88BBBB;
+    border-right    : 1px solid #076593;
+    border-bottom   : 1px solid #076593;
+    padding         : 5px;
+    white-space     : pre-line;
+}
+
+tr td .kckm_comment { /* クチコミのコメント列のみ*/
+    font-size   : 1.0em;
+    line-height : 1.4em;
+    word-break  : break-all;
+    white-space :  normal;
+}
+
+tr td ul {
+    list-style-type: none;
+}
+
+tr td .noborder{
+    border-style: none;
+}
+
+
+
+
+/*
+tr.blue td {
+        text-align    : right;
+        background    : #88BBBB;
+        white-space   : nowrap;
+        border-top    : 1px solid #88BBBB;
+        border-left   : 1px solid #88BBBB;
+        border-right  : 1px solid #076593;
+        border-bottom : 1px solid #076593;
+        padding       : 5px;
+}
+
+tr.white td {
+        text-align    : right;
+        background    : #FFFFFF;
+        white-space   : nowrap;
+        border-top    : 1px solid #88BBBB;
+        border-left   : 1px solid #88BBBB;
+        border-right  : 1px solid #076593;
+        border-bottom : 1px solid #076593;
+        padding       : 5px;
+}
+*/
+
+tr.viewflag_on td {
+    color: #000000;
+}
+
+tr.viewflag_off td {
+    color: #999999;
+}
+
+
+
+textarea {
+}
+
+textarea .resize{
+    resize: both;
+    min-width:200px;
+    min-height:100px;
+    overflow: hidden;
+}
+
+
+
+#footer {
+    width       : auto;
+    text-align  : center;
+    background  : #DCE9EF;
+    color       : #97CCF7;
+    clear       : both;
+}
+
+
+
+
+
+
+
+strong {
+    color : #FF3366;
+}
+
+p {
+    /* white-space   : wrap; */
+    white-space:  normal;
+}
+
+
+
+
+
+/* (基本的に)テーブル用 */
+.center0 { text-align : center; }
+.center1 {
+    text-align : center;
+    background : #FFFFCC;
+}
+.center2 {
+    text-align : center;
+    background : #BFBFBF;
+}
+
+.left0 { text-align : left; }
+.left1 {
+    text-align : left;
+    background : #FFFFCC;
+}
+.left2 {
+    text-align : left;
+    background : #BFBFBF;
+}
+
+.right0 { text-align : right; }
+.right1 {
+    text-align : right;
+    background : #FFFFCC;
+}
+.right2 {
+    text-align : right;
+    background : #BFBFBF;
+}
+
+
+
+
+
+.shortcut {
+    width: 90px; /* 要素の横幅を指定 */
+    height: 60px; /* 要素の横幅を指定 */
+    font-size: 1em;
+    /*white-space: nowrap;*/ /* 横幅のMAXに達しても改行しない */
+    white-space: pre-line;
+    overflow: hidden; /* ハミ出した部分を隠す */
+    text-overflow: ellipsis; /* 「…」と省略 */
+    -webkit-text-overflow: ellipsis; /* Safari */
+    -o-text-overflow: ellipsis; /* Opera */
+    -ms-text-overflow:ellipsis;
+}
+
+
+
+
+
+#asd_wrap {
+    margin-top: 20px;
+    /*
+    padding-left: 10px;
+    */
+}
+
+
+.select_terms1 {
+    width:60px;
+    height:24px;
+    font-size:16px;
+}
+.select_terms1 option {
+    font-size:16px;
+}
+.select_terms2 {
+    width:40px;
+    height:24px;
+    font-size:16px;
+}
+.select_terms2 option {
+    font-size:16px;
+}
+.select_terms3 {
+    width:110px;
+    height:24px;
+    font-size:16px;
+}
+.select_terms3 option {
+    font-size:16px;
+}
+
+
+/* --------------------------------------------------
+sprite
+----------------------------------------------------*/
+
+.star5-span, .star4-span,
+.star3-span, .star2-span,
+.star1-span, .star0-span,
+.arrow-right, .arrow-up {
+    background-image:url("../images/sprite-img.png");
+    background-repeat:no-repeat;
+}
+
+.arrow-up {
+    display: block;
+    overflow:hidden;
+    background-position: 20px -9px;
+}
+
+.arrow-right {
+    display: block;
+    overflow:hidden;
+    background-position: 0px  8px;
+}
+
+
+
+.regist-arrow a{
+    display: block;
+    overflow:hidden;
+    line-height:60px;
+    background-position: 0px  -160px;
+    position: rerative;
+}
+
+
+
+
+
+.star5-span{
+    display: block;
+    text-indent: -9999px;
+    width:105px;
+    height:20px;
+    background-position:0px -40px;
+    position: rerative;
+}
+.star4-span{
+    display: block;
+    text-indent: -9999px;
+    width:105px;
+    height:20px;
+    background-position:0px -60px;
+    position: rerative;
+}
+.star3-span{
+    display: block;
+    text-indent: -9999px;
+    width:105px;
+    height:20px;
+    background-position:0px -80px;
+    position: rerative;
+}
+.star2-span{
+    display: block;
+    text-indent: -9999px;
+    width:105px;
+    height:20px;
+    background-position:0px -100px;
+    position: rerative;
+}
+.star1-span{
+    display: block;
+    text-indent: -9999px;
+    width:105px;
+    height:20px;
+    background-position:0px -120px;
+    position: rerative;
+}
+.star0-span{
+    display: block;
+    text-indent: -9999px;
+    width:105px;
+    height:20px;
+    background-position:0px -140px;
+    position: rerative;
+}

@@ -45,12 +45,12 @@ class PearPDO {
 	var $log;
 
 	//コンストラクタ
-	function PearPDO($dsn=null,$ca=null) {
+	function __construct($dsn=null,$ca=null) {
 		$this->fetchmode = 'both';
 
 		/* 2019-01-25 SSL認証対応 */
 		$options = array();
-		if(strlen($ca)) {
+		if(!empty($ca)) {
 			if(file_exists($ca)) {
 				$options = array(PDO::MYSQL_ATTR_SSL_CA => $ca);
 			}

@@ -5,24 +5,18 @@ $local_domain = (!empty($_SERVER['SERVER_NAME']) && strpos($_SERVER['SERVER_NAME
 if(empty($local_domain)) {
 	define("MAIN_DOMAIN", "m-con.net");
 	define("ADMIN_DOMAIN", "admin.m-con.net");
-	define("BASE_URL" , "https://".MAIN_DOMAIN."/");
-	define("ADMIN_URL", "https://".ADMIN_DOMAIN."/");
-	$envdefine = parse_ini_file(dirname(__FILE__).'/../../.env');
 } else {
-	//ローカルテスト
+	//ローカルデバッグ環境用
 	define("MAIN_DOMAIN", "m-con.localhost.net");
 	define("ADMIN_DOMAIN", "m-con.localhost.net:8088");
-	define("BASE_URL" , "http://".MAIN_DOMAIN."/");
-	define("ADMIN_URL", "http://".ADMIN_DOMAIN."/");
-	//$envdefine = parse_ini_file(dirname(__FILE__).'/../../.env.sample');
 }
+define("BASE_URL" , "https://".MAIN_DOMAIN."/");
+define("ADMIN_URL", "https://".ADMIN_DOMAIN."/");
 
-if(!empty($envdefine)) {
-	define("DB_HOST"    , $envdefine['dbhost']);
-	define("DB_NAME"    , $envdefine['dbname']);
-	define("DB_USER"    , $envdefine['dbuser']);
-	define("DB_PASSWORD", $envdefine['dbpass']);
-}
+define('DB_HOST',    (empty($_ENV['MYSQL_HOST']) ? '': $_ENV['MYSQL_HOST']) );
+define('DB_NAME',    (empty($_ENV['MYSQL_DATABASE']) ? '': $_ENV['MYSQL_DATABASE']));
+define('DB_USER',    (empty($_ENV['MYSQL_USER']) ? '': $_ENV['MYSQL_USER']));
+define('DB_PASSWORD',(empty($_ENV['MYSQL_PASSWORD']) ? '': $_ENV['MYSQL_PASSWORD']));
 
 define("ROOT_DIR"   , "/var/www/admin/");
 define("CLASS_DIR"  , ROOT_DIR . "class/");
@@ -33,4 +27,3 @@ define("TPL_DIR_C"  , ROOT_DIR . "templates_c/");
 // Smarty expects SMARTY_DIR to point at the libs/ directory
 define('SMARTY_DIR' , ROOT_DIR.'lib/smarty-4.3.1/libs/');
 require_once SMARTY_DIR . 'Smarty.class.php';
-

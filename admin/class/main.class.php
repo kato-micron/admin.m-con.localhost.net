@@ -11,13 +11,16 @@ class Main
 		$RP = new RP('ua','rewrite','p');
 		$DB = new PearPDO();
 
-		$module = $RP->get(0,'index');
+		$module = $RP->get(0,'client');
 		$RP->set('module', $module);
 
 		$RP->setTemplate('admin');
 
+		$RP->set('main_domain', MAIN_DOMAIN);
+		$RP->set('admin_url', ADMIN_URL);
+
 		//module分岐
-		include MODULE_DIR.'index.module.php';
+		include MODULE_DIR.'client.module.php';
 
 	}
 
